@@ -1,0 +1,6 @@
+{
+  "name": "SinAlgia Turnos - Contactos",
+  "description": "Centro de rehabilitación especializado en columna y traumatología deportiva con acompañamiento psicológico. Contactos, consultorio y turnos en Corrientes Capital.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
