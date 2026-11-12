@@ -16,6 +16,7 @@ import {
   Check,
   Award,
   X,
+  ExternalLink,
 } from 'lucide-react';
 
 interface Professional {
@@ -158,7 +159,7 @@ export default function App() {
 
   const handleOpenGps = () => {
     window.open(
-      'https://www.google.com/maps/search/?api=1&query=Carlos+Pellegrini+627,+Corrientes,+Argentina',
+      'https://www.google.com/maps/dir/?api=1&destination=Carlos+Pellegrini+627,+Corrientes,+Argentina',
       '_blank',
       'noopener,noreferrer'
     );
@@ -395,8 +396,8 @@ export default function App() {
             </h2>
           </div>
 
-          <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_4px_24px_rgba(13,33,55,0.04)] p-4 sm:p-6 lg:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            {/* Left side: Stylized Street Map with interaction */}
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_4px_24px_rgba(13,33,55,0.06)] p-4 sm:p-6 lg:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            {/* Left side: Real Interactive Google Map */}
             <div className="lg:col-span-6 w-full">
               <CorrientesMap onOpenGps={handleOpenGps} />
             </div>
@@ -405,31 +406,49 @@ export default function App() {
             <div className="lg:col-span-6 space-y-4 lg:pl-3">
               <div className="flex items-center justify-between gap-3 flex-wrap">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-[#EFF6FF] text-[#00658D] flex items-center justify-center border border-[#BFDBFE]/60">
+                  <div className="w-10 h-10 rounded-xl bg-[#EFF6FF] text-[#00658D] flex items-center justify-center border border-[#BFDBFE]/60 shadow-xs">
                     <Building2 className="w-5 h-5 text-[#00658D]" />
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-bold text-[#0B1C30] leading-tight">
                       Consultorio Central SinAlgia
                     </h3>
-                    <p className="text-xs text-slate-500">Carlos Pellegrini 627, Corrientes</p>
+                    <p className="text-xs text-slate-500 font-medium">Carlos Pellegrini 627, Corrientes</p>
                   </div>
                 </div>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#E0F2FE] text-[#00658D] border border-[#BAE6FD]">
-                  Zona Centro
-                </span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#E0F2FE] text-[#00658D] border border-[#BAE6FD]">
+                    Zona Centro
+                  </span>
+                </div>
               </div>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                Acceso adaptado para pacientes con movilidad reducida, sala de espera climatizada y boxes individuales de terapia kinésica, descompresión y abordaje postural.
+                Centro de kinesiología y rehabilitación de alta complejidad. Espacios diseñados para tu recuperación integral, confort y privacidad durante cada sesión terapéutica.
               </p>
+
+              {/* Highlights pills */}
+              <div className="flex flex-wrap gap-2 pt-1 text-[11px] text-slate-600 font-medium">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/70">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  Rampa de acceso adaptado
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-50 text-sky-700 border border-sky-200/70">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-600" />
+                  Boxes individuales climatizados
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-slate-500" />
+                  Descompresión axial vertebral
+                </span>
+              </div>
 
               {/* Quick details chips */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700 pt-1">
                 <div
                   onClick={handleCopyAddress}
                   className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer group"
-                  title="Copiar dirección"
+                  title="Copiar dirección exacta"
                 >
                   <span className="text-[11px] font-semibold text-slate-600">Carlos Pellegrini 627</span>
                   <span className="text-[11px] font-bold text-[#00658D] inline-flex items-center gap-1">
@@ -453,23 +472,38 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Action Buttons: Limpios, responsivos y con textos legibles sin cortes */}
-              <div className="pt-2 flex items-center gap-3 flex-wrap sm:flex-nowrap">
-                {/* Cómo llegar (GPS) button */}
-                <button
-                  type="button"
-                  onClick={handleOpenGps}
+              {/* Action Buttons: Direct GPS navigation anchor, WhatsApp and Email */}
+              <div className="pt-2 flex items-center gap-2.5 flex-wrap">
+                {/* Cómo llegar (GPS) direct anchor tag - Never blocked by popup blockers */}
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Carlos+Pellegrini+627,+Corrientes,+Argentina"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="h-11 px-4 sm:px-5 rounded-xl bg-gradient-to-r from-[#00658D] to-[#005273] hover:from-[#005172] hover:to-[#00405c] active:scale-[0.98] text-white text-[11px] sm:text-xs font-bold tracking-tight inline-flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_4px_14px_rgba(0,101,141,0.25)] flex-1 sm:flex-initial"
+                  title="Abrir indicaciones en Google Maps"
                 >
-                  <Navigation className="w-4 h-4 shrink-0" />
+                  <Navigation className="w-4 h-4 shrink-0 text-[#7dd3fc]" />
                   <span className="whitespace-nowrap">Cómo llegar (GPS)</span>
-                </button>
+                </a>
+
+                {/* WhatsApp button */}
+                <a
+                  href="https://wa.me/5493794812290?text=Hola%20SinAlgia,%20quisiera%20hacer%20una%20consulta%20sobre%20atenci%C3%B3n%20y%20ubicaci%C3%B3n."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-11 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 active:scale-95 text-emerald-700 border border-emerald-200 text-[11px] sm:text-xs font-bold tracking-tight inline-flex items-center justify-center gap-2 transition-all cursor-pointer shadow-2xs"
+                  title="Consultar por WhatsApp"
+                >
+                  <MessageCircle className="w-4 h-4 shrink-0 text-emerald-600" />
+                  <span className="whitespace-nowrap">WhatsApp</span>
+                </a>
 
                 {/* Email button */}
                 <button
                   type="button"
                   onClick={() => handleOpenEmail('Consultorio Central SinAlgia', 'contacto@sinalgia.com')}
-                  className="h-11 px-4 sm:px-5 rounded-xl bg-[#EFF6FF] hover:bg-[#DBEAFE] active:scale-95 text-[#00658D] border border-[#BFDBFE]/70 text-[11px] sm:text-xs font-bold tracking-tight inline-flex items-center justify-center gap-2 transition-all cursor-pointer flex-1 sm:flex-initial shadow-2xs"
+                  className="h-11 px-4 rounded-xl bg-[#EFF6FF] hover:bg-[#DBEAFE] active:scale-95 text-[#00658D] border border-[#BFDBFE]/70 text-[11px] sm:text-xs font-bold tracking-tight inline-flex items-center justify-center gap-2 transition-all cursor-pointer shadow-2xs"
+                  title="Enviar consulta por correo electrónico"
                 >
                   <Mail className="w-4 h-4 shrink-0" />
                   <span className="whitespace-nowrap">Email</span>
