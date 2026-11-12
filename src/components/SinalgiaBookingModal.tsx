@@ -14,27 +14,27 @@ export const SinalgiaBookingModal: React.FC<SinalgiaBookingModalProps> = ({
 }) => {
   const professionals = [
     {
-      id: 'salazar-emilio',
-      name: 'Lic. Salazar Emilio',
-      license: 'M.P. 705',
+      id: 'emilio-zalazar',
+      name: 'Lic. Emilio Zalazar',
+      license: 'M.P. 1217',
       role: 'Kinesiólogo y Fisiatra • Turno Mañana',
-      specialty: 'Columna Vertebral y Deportiva',
+      specialty: 'Kinesiología Deportiva, Ortopedia y Postura',
       avatar: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_18.35.58_7eb67b41.jpeg',
       avatarPosition: 'object-[center_18%]',
-      phone: '+54 379 481-2290',
-      whatsapp: '5493794812290',
+      phone: '+54 379 479-0988',
+      whatsapp: '5493794790988',
       shifts: ['08:00', '08:45', '09:30', '10:15', '11:00', '11:45'],
     },
     {
       id: 'mario-vaz-torres',
       name: 'Lic. Mario E. Vaz Torres',
       license: 'M.P. 1227',
-      role: 'Kinesiólogo y Fisiatra • Turno Tarde',
-      specialty: 'Traumatología y Readaptación Funcional',
+      role: 'Kinesiología y Fisioterapia • Turno Tarde',
+      specialty: 'Rehabilitación Postural Global (RPG)',
       avatar: '/assets/aistudio/IMG-20261022-WA0009_9b1dfede.jpg',
       avatarPosition: 'object-[center_18%]',
-      phone: '+54 379 482-1140',
-      whatsapp: '5493794821140',
+      phone: '+54 351 599-1555',
+      whatsapp: '5493515991555',
       shifts: ['15:30', '16:15', '17:00', '17:45', '18:30', '19:15', '20:00'],
     },
     {
@@ -42,23 +42,23 @@ export const SinalgiaBookingModal: React.FC<SinalgiaBookingModalProps> = ({
       name: 'Lic. Nazarena Zalazar',
       license: 'M.P. 1795',
       role: 'Kinesióloga y Fisiatra • Turno Mañana / Tarde',
-      specialty: 'RPG, Columna y Reeducación Postural',
+      specialty: 'Kinesiología Dermatofuncional',
       avatar: '/assets/aistudio/WhatsApp_Image_2026-10-19_at_11.48.03_1cda2771.jpeg',
       avatarPosition: 'object-[center_16%]',
-      phone: '+54 379 483-3370',
-      whatsapp: '5493794833370',
+      phone: '+54 379 479-1008',
+      whatsapp: '5493794791008',
       shifts: ['14:00', '14:45', '15:30', '16:15', '17:00', '18:00'],
     },
     {
       id: 'constanza-schipani',
       name: 'Lic. Constanza Schipani',
-      license: 'Psicología',
-      role: 'Soporte Interdisciplinario • Manejo de Dolor Crónico',
-      specialty: 'Abordaje biopsicosocial del dolor y recuperación',
+      license: 'M.P. 1274 (Mnes) · M.P. 1564 (Ctes)',
+      role: 'Psicología Clínica • Manejo de Dolor Crónico',
+      specialty: 'Salud Mental, Crisis de Pánico y Dolor',
       avatar: '/assets/aistudio/WhatsApp_Image_2026-10-28_at_16.13.41_81c6198f.jpeg',
       avatarPosition: 'object-[center_18%]',
-      phone: '+54 379 484-9910',
-      whatsapp: '5493794849910',
+      phone: '+54 362 470-7973',
+      whatsapp: '5493624707973',
       shifts: ['10:00', '11:30', '16:00', '17:30', '19:00'],
     },
   ];
@@ -75,7 +75,10 @@ export const SinalgiaBookingModal: React.FC<SinalgiaBookingModalProps> = ({
 
   useEffect(() => {
     if (initialProfessionalId) {
-      setSelectedProfId(initialProfessionalId);
+      const match = professionals.find(
+        (p) => p.id === initialProfessionalId || (initialProfessionalId === 'salazar-emilio' && p.id === 'emilio-zalazar')
+      );
+      if (match) setSelectedProfId(match.id);
     }
   }, [initialProfessionalId]);
 

@@ -17,6 +17,7 @@ import {
   Award,
   X,
   ExternalLink,
+  Instagram,
 } from 'lucide-react';
 
 interface Professional {
@@ -36,6 +37,8 @@ interface Professional {
   phone: string;
   whatsapp: string;
   email: string;
+  instagram: string;
+  instagramHandle: string;
   hasScheduleInterview: boolean;
   bio: string;
   certifications: string[];
@@ -56,12 +59,12 @@ export default function App() {
 
   const professionals: Professional[] = [
     {
-      id: 'salazar-emilio',
-      name: 'Lic. Salazar Emilio',
-      badge: 'M.P. 705',
+      id: 'emilio-zalazar',
+      name: 'Lic. Emilio Zalazar',
+      badge: 'M.P. 1217',
       badgeType: 'license',
       title: 'Kinesiólogo y Fisiatra • Turno Mañana',
-      specialty: 'Columna Vertebral y Deportiva',
+      specialty: 'Kinesiología Deportiva, Ortopedia y Rehabilitación Postural',
       avatar: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_18.35.58_7eb67b41.jpeg',
       avatarPosition: 'object-[center_18%]',
       statusDot: 'bg-emerald-500',
@@ -69,15 +72,21 @@ export default function App() {
       statusIcon: 'dot',
       isLiveAvailable: true,
       hours: '08:00 - 12:30 hs',
-      phone: '+54 379 481-2290',
-      whatsapp: '5493794812290',
-      email: 'salazar.emilio@sinalgia.com',
+      phone: '+54 379 479-0988',
+      whatsapp: '5493794790988',
+      email: 'lic.emiliozalazar@sinalgia.com',
+      instagram: 'https://www.instagram.com/lic.emiliozalazar/',
+      instagramHandle: '@lic.emiliozalazar',
       hasScheduleInterview: false,
-      bio: 'Especialista en descompresión axial vertebral, cadenas musculares y rehabilitación kinésica intensiva de lesiones deportivas complejas.',
+      bio: 'Kinesiólogo y fisiatra especializado en kinesiología deportiva, ortopedia y traumatología, rehabilitación postural, neurológica y osteopatía.',
       certifications: [
-        'Diplomatura Superior en Reeducación Postural (UNNE)',
-        'Especialista en Ortopedia y Traumatología',
-        'Director del Área de Columna Vertebral',
+        'Lic. en Kinesiología y Fisiatría (UNNE)',
+        'Esp. en Kinesiología Deportiva (Univ. Favaloro)',
+        'Dipl. Sup. en Ortopedia y Traumatología (UNNE)',
+        'Posgrado en Rehabilitación Neurológica',
+        'Diplomatura en Rehabilitación Postural (UNNE)',
+        'Diplomatura en Osteopatía (UNNE)',
+        'Cert. HIGH Fitness Trainer (entrenamiento funcional de alta intensidad)',
       ],
     },
     {
@@ -85,8 +94,8 @@ export default function App() {
       name: 'Lic. Mario E. Vaz Torres',
       badge: 'M.P. 1227',
       badgeType: 'license',
-      title: 'Kinesiólogo y Fisiatra • Turno Tarde',
-      specialty: 'Traumatología y Readaptación Funcional',
+      title: 'Kinesiología y Fisioterapia • Turno Tarde',
+      specialty: 'Rehabilitación Postural Global (RPG) y Taping Neuromuscular',
       avatar: '/assets/aistudio/IMG-20261022-WA0009_9b1dfede.jpg',
       avatarPosition: 'object-[center_18%]',
       statusDot: 'bg-[#00658D]',
@@ -94,15 +103,18 @@ export default function App() {
       statusIcon: 'clock',
       isLiveAvailable: false,
       hours: '15:30 - 20:30 hs',
-      phone: '+54 379 482-1140',
-      whatsapp: '5493794821140',
+      phone: '+54 351 599-1555',
+      whatsapp: '5493515991555',
       email: 'vaztorres.mario@sinalgia.com',
+      instagram: 'https://www.instagram.com/sinalgia/',
+      instagramHandle: '@sinalgia',
       hasScheduleInterview: false,
-      bio: 'Enfocado en biomecánica articular, recuperación acelerada de cirugías traumatológicas y reinserción al movimiento cotidiano y deportivo.',
+      bio: 'Kinesiólogo egresado de la UNC especializado en Reeducación Postural Global (RPG), lesiones articulares y vendaje neuromuscular (Taping).',
       certifications: [
-        'Fisioterapia y Kinefilaxia Avanzada',
-        'Readaptación Funcional Post-quirúrgica',
-        'Terapia Manual Neuromusculoesquelética',
+        'Lic. de Kinesiología y Fisioterapia (UNC)',
+        'Formación superior en RPG aplicado a lesiones articulares',
+        'Taping neuromuscular (TNM Argentina)',
+        'Especialistas en rehabilitación postural global - RPG',
       ],
     },
     {
@@ -111,7 +123,7 @@ export default function App() {
       badge: 'M.P. 1795',
       badgeType: 'license',
       title: 'Kinesióloga y Fisiatra • Turno Mañana / Tarde',
-      specialty: 'RPG, Columna y Reeducación Postural',
+      specialty: 'Kinesiología Dermatofuncional y Fisiatría',
       avatar: '/assets/aistudio/WhatsApp_Image_2026-10-19_at_11.48.03_1cda2771.jpeg',
       avatarPosition: 'object-[center_16%]',
       statusDot: 'bg-emerald-500',
@@ -119,40 +131,45 @@ export default function App() {
       statusIcon: 'clock',
       isLiveAvailable: true,
       hours: '14:00 - 19:00 hs',
-      phone: '+54 379 483-3370',
-      whatsapp: '5493794833370',
+      phone: '+54 379 479-1008',
+      whatsapp: '5493794791008',
       email: 'zalazar.nazarena@sinalgia.com',
+      instagram: 'https://www.instagram.com/lic.zalazarnazarena/',
+      instagramHandle: '@lic.zalazarnazarena',
       hasScheduleInterview: false,
-      bio: 'Especialista en corrección global de la postura (RPG), alivio de cervicalgias, escoliosis y dolores posturales crónicos derivados del trabajo o estrés.',
+      bio: 'Kinesióloga y fisiatra egresada de la UNNE con formación de posgrado en Kinesiología Dermatofuncional (UNC) y rehabilitación integral.',
       certifications: [
-        'Formación Superior en RPG y Cadenas Miofasciales',
-        'Tratamiento Integral de Patologías de Columna',
-        'Kinesiología Preventiva y Ergonomía',
+        'Lic. en Kinesiología y Fisiatría (UNNE)',
+        'Posgrado en Kinesiología Dermatofuncional (UNC)',
       ],
     },
     {
       id: 'constanza-schipani',
       name: 'Lic. Constanza Schipani',
-      badge: 'Psicología',
+      badge: 'M.P. 1274 / 1564',
       badgeType: 'specialty',
-      title: 'Soporte Interdisciplinario • Manejo de Dolor Crónico',
-      specialty: 'Abordaje biopsicosocial del dolor y recuperación',
+      title: 'Psicología · M.P. 1274 (Mnes) - M.P. 1564 (Ctes)',
+      specialty: 'Salud Mental, Crisis de Pánico, Psicosomática y Dolor Crónico',
       avatar: '/assets/aistudio/WhatsApp_Image_2026-10-28_at_16.13.41_81c6198f.jpeg',
       avatarPosition: 'object-[center_18%]',
-      statusDot: 'bg-sky-400',
+      statusDot: 'bg-rose-400',
       statusText: 'Atención personalizada',
       statusIcon: 'none',
       isLiveAvailable: false,
       hours: 'Turnos coordinados',
-      phone: '+54 379 484-9910',
-      whatsapp: '5493794849910',
+      phone: '+54 362 470-7973',
+      whatsapp: '5493624707973',
       email: 'schipani.constanza@sinalgia.com',
+      instagram: 'https://www.instagram.com/psicologa.constanza.schipani/',
+      instagramHandle: '@psicologa.constanza.schipani',
       hasScheduleInterview: true,
-      bio: 'Acompañamiento psicológico especializado en la modulación del dolor persistente, manejo del estrés, ansiedad somática y adherencia terapéutica.',
+      bio: 'Psicóloga clínica con posgrados en psicosomática, crisis de pánico y terapia cognitiva. Acompañamiento especializado en salud mental comunitaria y dolor crónico.',
       certifications: [
-        'Licenciada en Psicología Clínica',
-        'Abordaje Cognitivo Conductual del Dolor Crónico',
-        'Coordinación Interdisciplinaria SinAlgia',
+        'Diplomada Superior en Salud Mental Comunitaria (Universidad Nacional de Lanús)',
+        'Diplomada Universitaria en Psicodiagnóstico Clínico (Universidad del Aconcagua)',
+        'Posgrado Universitario en Crisis de Pánico, Psicosomática y Psicoanálisis (Universidad Nacional de Buenos Aires)',
+        'Posgrado Universitario en Terapia Cognitiva para Trastornos de Conducta y Manejo de la Impulsividad en Niños y Adolescentes (Universidad Nacional de Buenos Aires)',
+        'Diplomada Superior en Necesidades Educativas, Prácticas Inclusivas y Trastornos del Desarrollo (Facultad Latinoamericana de Ciencias Sociales)',
       ],
     },
   ];
@@ -287,13 +304,38 @@ export default function App() {
 
                       <div className="flex items-center gap-1.5 text-xs text-slate-600 mt-1.5">
                         {prof.hasScheduleInterview ? (
-                          <User className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                          <User className="w-3.5 h-3.5 text-rose-500 shrink-0" />
                         ) : (
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                         )}
                         <span className="truncate">
                           {prof.hasScheduleInterview ? '' : 'Espec: '}{prof.specialty}
                         </span>
+                      </div>
+
+                      {/* WhatsApp & Instagram Direct Badges */}
+                      <div className="flex items-center gap-2 mt-2 flex-wrap">
+                        <a
+                          href={`https://wa.me/${prof.whatsapp}?text=Hola%20${encodeURIComponent(prof.name)},%20quisiera%20consultar%20por%20un%20turno%20en%20SinAlgia`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-[#00658D] hover:text-[#004e6e] bg-[#EFF6FF] px-2.5 py-0.5 rounded-lg border border-[#BFDBFE]/60 transition-colors"
+                          title="Enviar WhatsApp directo"
+                        >
+                          <MessageCircle className="w-3 h-3 text-[#00658D]" />
+                          <span>WhatsApp {prof.phone.replace('+54 ', '')}</span>
+                        </a>
+
+                        <a
+                          href={prof.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] font-semibold text-rose-600 hover:text-rose-700 bg-rose-50 px-2 py-0.5 rounded-lg border border-rose-200/60 transition-colors"
+                          title={`Instagram ${prof.instagramHandle}`}
+                        >
+                          <Instagram className="w-3 h-3 text-rose-500" />
+                          <span>{prof.instagramHandle}</span>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -488,7 +530,7 @@ export default function App() {
 
                 {/* WhatsApp button */}
                 <a
-                  href="https://wa.me/5493794812290?text=Hola%20SinAlgia,%20quisiera%20hacer%20una%20consulta%20sobre%20atenci%C3%B3n%20y%20ubicaci%C3%B3n."
+                  href="https://wa.me/5493794790988?text=Hola%20SinAlgia,%20quisiera%20hacer%20una%20consulta%20sobre%20atenci%C3%B3n%20y%20ubicaci%C3%B3n."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="h-11 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 active:scale-95 text-emerald-700 border border-emerald-200 text-[11px] sm:text-xs font-bold tracking-tight inline-flex items-center justify-center gap-2 transition-all cursor-pointer shadow-2xs"
@@ -633,6 +675,16 @@ export default function App() {
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" />
                   <span className="whitespace-nowrap">WhatsApp</span>
+                </a>
+                <a
+                  href={selectedProfileModal.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-11 px-3.5 rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 text-rose-700 border border-rose-200/80 text-[11px] sm:text-xs font-bold tracking-tight flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-2xs"
+                  title={`Instagram de ${selectedProfileModal.name}`}
+                >
+                  <Instagram className="w-4 h-4 text-rose-600 shrink-0" />
+                  <span className="hidden sm:inline">Instagram</span>
                 </a>
                 <button
                   type="button"
