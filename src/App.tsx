@@ -469,22 +469,6 @@ export default function App() {
                 Centro de kinesiología y rehabilitación de alta complejidad. Espacios diseñados para tu recuperación integral, confort y privacidad durante cada sesión terapéutica.
               </p>
 
-              {/* Highlights pills */}
-              <div className="flex flex-wrap gap-2 pt-1 text-[11px] text-slate-600 font-medium">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/70">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  Rampa de acceso adaptado
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-50 text-sky-700 border border-sky-200/70">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-600" />
-                  Boxes individuales climatizados
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-slate-500" />
-                  Descompresión axial vertebral
-                </span>
-              </div>
-
               {/* Quick details chips */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700 pt-1">
                 <div
